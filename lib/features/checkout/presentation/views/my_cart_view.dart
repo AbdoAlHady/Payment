@@ -21,6 +21,12 @@ class MyCartView extends StatelessWidget {
           onPressed: () {},
         ),
       ),
+      body: Column(
+        children: [
+          const SizedBox(height: 25),
+          Image.asset('assets/images/basket_image.png'),
+        ],
+      ),
     );
   }
 }
