@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:payment_app/features/checkout/presentation/views/payment_details_view.dart';
+import 'package:payment_app/features/checkout/presentation/widgets/custom_app_bar.dart';
 import 'package:payment_app/features/checkout/presentation/widgets/custom_button.dart';
 import 'package:payment_app/features/checkout/presentation/widgets/total_price.dart';
 
-import '../../../../core/theme/app_text_styles.dart';
 import '../widgets/order_info_item.dart';
 
 class MyCartView extends StatelessWidget {
@@ -11,20 +12,7 @@ class MyCartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'My Cart',
-          style: AppTextStyles.font25BlackW500,
-        ),
-        centerTitle: true,
-        surfaceTintColor: Colors.transparent,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios),
-          onPressed: () {},
-        ),
-      ),
+      appBar: const CustomAppBar(title: 'My Cart'),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
@@ -41,7 +29,12 @@ class MyCartView extends StatelessWidget {
             const Divider(thickness: 2.0, height: 24),
             const TotalPrice(title: 'Total', value: 50.97),
             const SizedBox(height: 16),
-            CustomButton(onPressed: () {}),
+            CustomButton(onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const PaymentDetailsView()));
+            }),
             const SizedBox(height: 12),
           ],
         ),
