@@ -29,12 +29,14 @@ class MyCartView extends StatelessWidget {
             const Divider(thickness: 2.0, height: 24),
             const TotalPrice(title: 'Total', value: 50.97),
             const SizedBox(height: 16),
-            CustomButton(onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const PaymentDetailsView()));
-            }),
+            CustomButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const PaymentDetailsView()));
+                },
+                text: 'Complete Payment'),
             const SizedBox(height: 12),
           ],
         ),
