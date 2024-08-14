@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:payment_app/features/checkout/presentation/views/payment_details_view.dart';
 import 'package:payment_app/features/checkout/presentation/widgets/custom_app_bar.dart';
 import 'package:payment_app/features/checkout/presentation/widgets/custom_button.dart';
+import 'package:payment_app/features/checkout/presentation/widgets/payment_methods_bottom_sheet.dart';
 import 'package:payment_app/features/checkout/presentation/widgets/total_price.dart';
 
 import '../widgets/order_info_item.dart';
@@ -31,10 +31,16 @@ class MyCartView extends StatelessWidget {
             const SizedBox(height: 16),
             CustomButton(
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const PaymentDetailsView()));
+                  showModalBottomSheet(
+                    context: context,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        topRight: Radius.circular(20),
+                      ),
+                    ),
+                    builder: (context) => const PaymentMethodsModelSheet(),
+                  );
                 },
                 text: 'Complete Payment'),
             const SizedBox(height: 12),
