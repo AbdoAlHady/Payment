@@ -1,10 +1,23 @@
 import 'package:flutter/material.dart';
 
 abstract class AppTextStyles {
+  static const TextStyle font16BlackW400 = TextStyle(
+    fontSize: 16,
+    color: Colors.black,
+    fontWeight: FontWeight.w400,
+    height: 0,
+  );
+
   static const TextStyle font18BlackW400 = TextStyle(
     fontSize: 18,
     color: Colors.black,
     fontWeight: FontWeight.w400,
+    height: 0,
+  );
+  static const TextStyle font18BlackW600 = TextStyle(
+    fontSize: 18,
+    color: Colors.black,
+    fontWeight: FontWeight.w600,
     height: 0,
   );
   static const TextStyle font24BlackW600 = TextStyle(
@@ -14,7 +27,7 @@ abstract class AppTextStyles {
   );
 
   static const TextStyle font20BlackW400 = TextStyle(
-    fontSize: 24,
+    fontSize: 20,
     color: Colors.black,
     fontWeight: FontWeight.w400,
   );
